@@ -1,0 +1,240 @@
+@font-face {
+    font-family: Lora;
+    src: url('../fonts/Lora-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: WorkSans;
+    src: url('../fonts/WorkSans-VariableFont_wght.ttf');
+}
+
+:root {
+    --main_color: #2e2e2e;
+    --white: #fff;
+    --foot_color: #1d2c2f;
+    --space-out: 2rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    line-height: 2rem;
+    font-size: 62.5%;
+    font-family: 'WorkSans', Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Lora', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    margin-bottom: var(--space-out);
+
+}
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3rem;
+}
+p {
+    font-size: 1.5rem;
+}
+
+[class|="container"] {
+    min-height: 100vh;
+    display: flex;
+}
+
+main [class|="container"]:nth-of-type(odd) {
+    background-color: var(--main_color);
+}
+
+main [class|="container"]:nth-of-type(even) {
+    background-color: var(--white);
+}
+
+.container-above {
+    background-color: var(--white);
+    display: flex;
+}
+
+[class|=container] article {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    letter-spacing: .5rem;
+    padding: var(--space-out);
+}
+
+[class*="img"] {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-width: 60%;
+    max-width: 60%;
+}
+
+.img-designer {
+    background-image: url('../img/design-interior-1.jpg');
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+header nav{
+    background-color: var(--main_color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.4rem;
+    margin: 0 4.5rem;
+    padding: 0.5rem;
+}
+
+nav a:hover {
+    border-left: 1px solid var(--white);
+    border-right: 1px solid var(--white);
+    padding: 0.5rem;
+}
+
+.img-story {
+    background-image: url('../img/story.jpg');
+}
+
+.container-story {
+    flex-direction: row-reverse;
+    padding: 10rem var(--space-out);
+}
+
+.container-story article{
+    color: var(--white);
+    letter-spacing: normal; 
+    word-spacing: 1rem;
+    font-size: 1.5rem;
+}
+
+.container-story p {
+    text-align: left;
+    margin-bottom: var(--space-out);
+}
+
+.container-featured {
+    flex-direction: column;
+    width: 100%;
+    margin: 10rem 0;
+}
+
+.container-featured article:first-of-type p{
+    text-align: left;
+}
+.container-featured article:nth-of-type(2) {
+    display: flex;
+    flex-direction: row;
+    align-items: first baseline;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.container-featured img {
+    width: 90%;
+}
+
+.container-featured iframe {
+    width: 100%;
+    min-height: 315px;
+}
+
+.container-touch {
+    color: var(--white);
+}
+
+.container-touch article{
+    color: var(--white);
+    text-align: left;
+}
+
+.container-touch form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    margin: auto;
+}
+
+.container-touch input,
+.container-touch textarea,
+.container-touch button {
+    padding: 1rem;
+    margin-bottom: var(--space-out);
+    width: 80%;
+}
+.container-touch textarea {
+    min-width: 80%;
+    max-width: 80%;
+}
+
+.container-touch label {
+    font-size: 1.5rem;
+}
+
+.container-touch button {
+    max-width: 20%;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--foot_color);
+    padding: var(--space-out);
+    color: var(--white);
+}
+
+footer a {
+    color: var(--white);
+}
+
+
+@media only screen and (max-width:600px) {
+    [class|="container"] {
+        flex-direction: column;
+    }
+
+    [class|="container"] article {
+        width: 100%;
+    }
+    [class*="img"] {
+        min-width: 100%;
+        max-width: 100%;
+        height: 100vh;
+    }
+    nav a {
+        margin: 0 2.5rem; 
+    }
+    .container-featured article:nth-of-type(2){
+        flex-direction: column;
+    }
+    .container-touch form {
+        width: 100%;
+        margin: auto;
+        align-items: center;
+    }
+
+    .container-touch label{
+        width: 80%;
+    }
+    p {
+        margin-bottom: 1.5rem;
+    }
+}
